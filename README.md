@@ -36,3 +36,7 @@ Check out the [releases](https://github.com/SuperKohl/SkySeeker/releases) page.
 # How To Get Help
 
 - [Submit a new issue](https://github.com/SuperKohl/SkySeeker/issues)
+
+# How To Get Help
+
+Thaks to Raúl Ortega [u360gts](https://github.com/raul-ortega/u360gts) page.
