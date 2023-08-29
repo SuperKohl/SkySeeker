@@ -10,7 +10,6 @@
 .cproject
 obj/
 patches/
-startup_stm32f10x_md_gcc.s
 .vagrant/
 
 # script-generated files
