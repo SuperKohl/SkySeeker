@@ -15,7 +15,7 @@ Once you have Bash On Windows running you can follow the "Building in Ubuntu" in
 
 download the Setup*.exe from https://www.cygwin.com/
 
-![Cygwin Installation](assets/001.cygwin_dl.png)
+![Cygwin Installation](assets/building-in-windows/001.cygwin_dl.png)
 
 Execute the download Setup and step through the installation  wizard (no need to customize the settings here). Stop at the  "Select Packages" Screen and select the following Packages
 for Installation:
@@ -28,20 +28,20 @@ for Installation:
 - Editors/vim-common (Optional)
 - Shells/mintty (should be already selected)
 
-![Cygwin Installation](assets/002.cygwin_setup.png)
+![Cygwin Installation](assets/building-in-windows/002.cygwin_setup.png)
 
-![Cygwin Installation](assets/003.cygwin_setup.png)
+![Cygwin Installation](assets/building-in-windows/003.cygwin_setup.png)
 
-![Cygwin Installation](assets/004.cygwin_setup.png)
+![Cygwin Installation](assets/building-in-windows/004.cygwin_setup.png)
 
-![Cygwin Installation](assets/005.cygwin_setup.png)
+![Cygwin Installation](assets/building-in-windows/005.cygwin_setup.png)
 
-![Cygwin Installation](assets/006.cygwin_setup.png)
+![Cygwin Installation](assets/building-in-windows/006.cygwin_setup.png)
 
 
 Continue with the Installation and accept all autodetected dependencies.
 
-![Cygwin Installation](assets/007.cygwin_setup.png)
+![Cygwin Installation](assets/building-in-windows/007.cygwin_setup.png)
 
 
 ##Setup GNU ARM Toolchain
@@ -53,13 +53,13 @@ versions do matter, 5.4 is known to work well. Download this version from https:
 
 Extract the contents of this archive to any folder of your choice, for instance ```C:\dev\gcc-arm```. 
 
-![GNU ARM Toolchain Setup](assets/008.toolchain.png)
+![GNU ARM Toolchain Setup](assets/building-in-windows/008.toolchain.png)
 
 add the "bin" subdirectory to the PATH Windows environment variable: ```%PATH%;C:\dev\gcc-arm\bin```
 
-![GNU ARM Toolchain Setup](assets/009.toolchain_path.png)
+![GNU ARM Toolchain Setup](assets/building-in-windows/009.toolchain_path.png)
 
-![GNU ARM Toolchain Setup](assets/010.toolchain_path.png)
+![GNU ARM Toolchain Setup](assets/building-in-windows/010.toolchain_path.png)
 
 ## Checkout and compile u360gts
 
@@ -71,9 +71,9 @@ Open the Cygwin-Terminal, navigate to your development folder and use the git co
 cd /cygdrive/c/dev
 git clone https://github.com/u360gts/u360gts.git
 ```
-![GIT Checkout](assets/011.git_checkout.png)
+![GIT Checkout](assets/building-in-windows/011.git_checkout.png)
 
-![GIT Checkout](assets/012.git_checkout.png)
+![GIT Checkout](assets/building-in-windows/012.git_checkout.png)
 
 To compile your u360gts binaries, enter the u360gts directory and build the project using the make command. You can append TARGET=[HARDWARE] if you want to build anything other than the default NAZE target:
 
@@ -82,7 +82,7 @@ cd u360gts
 make TARGET=NAZE
 ```
 
-![GIT Checkout](assets/013.compile.png)
+![GIT Checkout](assets/building-in-windows/013.compile.png)
 
 within few moments you should have your binary ready:
 
