@@ -2,11 +2,11 @@
 
 ## Charging-Only Cables
 
-If you see no signs of life on your host computer when you plug in your board, check your cable with your mobile phone or some other USB device - some charging cables have only the power pins connected. These will power up the board, so the leds light up, but the host computer will not react to the device at all. You need a proper USB cable to connect your board to the u360gts configurator.
+If you see no signs of life on your host computer when you plug in your board, check your cable with your mobile phone or some other USB device - some charging cables have only the power pins connected. These will power up the board, so the leds light up, but the host computer will not react to the device at all. You need a proper USB cable to connect your board to the SkySeeker configurator.
 
 ## Platform Specific: Windows
 
-u360gts configurator can have problems accessing USB devices on Windows. A solution could be to replace the ST driver with a libusb driver.The easiest way to do that is to download [Zadig](http://zadig.akeo.ie/). 
+SkySeeker configurator can have problems accessing USB devices on Windows. A solution could be to replace the ST driver with a libusb driver.The easiest way to do that is to download [Zadig](http://zadig.akeo.ie/). 
 With the board connected and in bootloader mode: 
 * Open Zadig
 * Choose Options > List All Devices
@@ -35,6 +35,6 @@ If you see your ttyUSB device disappear right after the board is connected, chan
 sudo systemctl stop ModemManager.service 
 ```
 
-If your system lacks the systemctl command, use any equivalent command that works on your system to disable services. You can likely add your device ID to a blacklist configuration file to stop ModemManager from touching the device, if you need it for cellural networking, but that is beyond the scope of u360gts documentation.
+If your system lacks the systemctl command, use any equivalent command that works on your system to disable services. You can likely add your device ID to a blacklist configuration file to stop ModemManager from touching the device, if you need it for cellural networking, but that is beyond the scope of SkySeeker documentation.
 
-If you see the ttyUSB device appear and immediately disappear from the list in u360gts configurator when you plug in your flight controller via USB, chances are that NetworkManager thinks your board is a GSM modem and hands it off to the ModemManager daemon as the flight controllers are not known to the blacklisted
+If you see the ttyUSB device appear and immediately disappear from the list in SkySeeker configurator when you plug in your flight controller via USB, chances are that NetworkManager thinks your board is a GSM modem and hands it off to the ModemManager daemon as the flight controllers are not known to the blacklisted

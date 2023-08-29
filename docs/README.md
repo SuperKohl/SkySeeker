@@ -1,4 +1,4 @@
-## About u360gts
+## About SkySeeker
 
 - [History](history.md)
 - [Overview](overview.md)
@@ -15,7 +15,7 @@
 ## Configuration
 
 - [Loading the firmware](configuration-loading-firmware.md)
-- [Configurator](https://github.com/raul-ortega/u360gts-configurator)
+- [Configurator](https://github.com/SuperKohl/SkySeeker-configurator)
 - [Magnetometer](configuration-compass.md)
 - Pan servo
 - Tilt servo

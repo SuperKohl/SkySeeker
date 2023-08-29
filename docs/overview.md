@@ -42,7 +42,7 @@ Examples:
 
 **GRAPHICAL CONFIGURATOR**
 
-Yo can configure and interact with the antenna tracker through the [u360gts-configurator](https://github.com/raul-ortega/u360gts-configurator), a software which will facilitate setting parameters, control operations, and test its behavior via simulations.
+Yo can configure and interact with the antenna tracker through the [SkySeeker-configurator](https://github.com/SuperKohl/SkySeeker-configurator), a software which will facilitate setting parameters, control operations, and test its behavior via simulations.
 
 **COMMAND LINE INTERFACE**
 

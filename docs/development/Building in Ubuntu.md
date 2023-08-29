@@ -1,7 +1,7 @@
 # Building in Ubuntu
 
 Building for Ubuntu platform is remarkably easy. The only trick to understand is that the Ubuntu toolchain,
-which they are downstreaming from Debian, is not compatible with u360gts. We suggest that you take an
+which they are downstreaming from Debian, is not compatible with SkySeeker. We suggest that you take an
 alternative PPA from Terry Guo, found here:
 https://launchpad.net/~terry.guo/+archive/ubuntu/gcc-arm-embedded
 
@@ -41,24 +41,25 @@ sudo apt-get install gcc-arm-none-eabi=4.9.3.2014q4-0precise12
 
 After the ARM toolchain from Terry is installed, you should be able to build from source.
 ```
+mkdir src
 cd src
-git clone git@github.com:u360gts/u360gts.git
-cd u360gts
+git clone https://github.com/SuperKohl/SkySeeker.git
+cd SkySeeker
 make TARGET=NAZE
 ```
 
 You'll see a set of files being compiled, and finally linked, yielding both an ELF and then a HEX:
 ```
 ...
-arm-none-eabi-size ./obj/main/u360gts_NAZE.elf 
+arm-none-eabi-size ./obj/main/SkySeeker_NAZE.elf 
    text    data     bss     dec     hex filename
-  97164     320   11080  108564   1a814 ./obj/main/u360gts_NAZE.elf
-arm-none-eabi-objcopy -O ihex --set-start 0x8000000 obj/main/u360gts_NAZE.elf obj/u360gts_NAZE.hex
-$ ls -la obj/u360gts_NAZE.hex                                                                                                                                                 
--rw-rw-r-- 1 pim pim 274258 Jan 12 21:45 obj/u360gts_NAZE.hex
+  97164     320   11080  108564   1a814 ./obj/main/SkySeeker_NAZE.elf
+arm-none-eabi-objcopy -O ihex --set-start 0x8000000 obj/main/SkySeeker_NAZE.elf obj/SkySeeker_NAZE.hex
+$ ls -la obj/SkySeeker_NAZE.hex                                                                                                                                                 
+-rw-rw-r-- 1 pim pim 274258 Jan 12 21:45 obj/SkySeeker_NAZE.hex
 ```
 
-You can use the u360gts-Configurator to flash the ```obj/u360gts_NAZE.hex``` file.
+You can use the SkySeeker-Configurator to flash the ```obj/SkySeeker_NAZE.hex``` file.
 
 ## Bricked/Bad build?
 
@@ -76,10 +77,10 @@ Make sure to remove `obj/` and `make clean`, before building again.
 
 ## Updating and rebuilding
 
-Navigate to the local u360gts repository and use the following steps to pull the latest changes and rebuild your version of u360gts:
+Navigate to the local SkySeeker repository and use the following steps to pull the latest changes and rebuild your version of SkySeeker:
 
 ```
-cd src/u360gts
+cd src/SkySeeker
 git reset --hard
 git pull
 make clean TARGET=NAZE
