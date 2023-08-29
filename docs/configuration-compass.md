@@ -7,11 +7,11 @@ u360gts requires a compass sensor for tracking. When a compass is pressent, is c
 
 In the moment of writing this document, u360gts supports HMC5883L and QMC5583L compass sensors. To be sure about what you are buying you must ask the seller, because he might be providing not supported chips while in the product description is specified the supported ones.
 
-<!-- img src="img/supported_mag.jpg" width="525" /-->
+<!-- img src="assets/supported_mag.jpg" width="525" /-->
 
 u360gts firmware can detect the compass. To check if the compass of your board (or the external one) is supported, in CLI window of configurator type the command "status". The response will show HMC5883 or QMC5883 if detected.
 
-<img src="img/CLI_status_mag.jpg" width="433" />
+<img src="assets/CLI_status_mag.jpg" width="433" />
 
 
 ## Wiring
@@ -29,7 +29,7 @@ Note: Before mag calibration you should [configure the pan servo](configuration-
 
 To calibrate the compass from configurator go to Configuration -> Mag, and clic on Calibrate Mag button.
 
-<img src="img/mag_configuration.jpg" width="527" />
+<img src="assets/mag_configuration.jpg" width="527" />
 
 The controller will send the calibration pulse to the servo, and it will start spinning. During 10 seconds the controller will retrieve data from the sensor and will calculate magzero x, y and z values. Then the controller sends the stop pulse to the servo, it will stop spinning and calibration will be finished.
 
