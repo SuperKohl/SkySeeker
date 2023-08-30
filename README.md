@@ -39,4 +39,4 @@ Check out the [releases](https://github.com/SuperKohl/SkySeeker/releases) page.
 
 # Thanks
 
-Thaks to Raúl Ortega [u360gts](https://github.com/raul-ortega/u360gts) page.
+Thanks to Raúl Ortega for the U360GTS Progect. Link to the [u360gts](https://github.com/raul-ortega/u360gts) page.
