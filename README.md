@@ -6,7 +6,8 @@ You are encouraged to read all the [documentation](docs/README.md) before using 
 
 ## Hardware platform 
 
-This firmware has been developed for controllers based on STM32 F1 and F3 series microprocessors, such as the popular NAZE32 or SPRacingF3 and their clones. Flight controllers **without** an onboard magnetometer are to be preferred. As these Flight Controllers are nowadays very hard to get, we are working on support for more up to date hardware in the near future. This includes especially F411 and F405 based Flight controllers, that are widely available today and many of us have in their parts drawer anyway. 
+U360GTS was based on [Cleanflight](https://github.com/cleanflight/cleanflight) and supported especially older Flight Controllers like the F1 based NAZE32 or the F3 based SPRacingF3. As these FC are nowadays very hard to impossible to come by and implementing newer FCs would be a mammoth task, SkySeeker will be completely rebased on the latest INAV version 6.1.1! This allows us to support the latest and gratest controller generations and a variety of readily available and cheap FCs, to conbtrol your tracker. This includes especially F411 and F405 based Flight controllers, that are widely available today and many of us have in their parts drawer anyway. 
+Flight controllers **without** an onboard magnetometer are to be preferred. 
 
 # Features
 
