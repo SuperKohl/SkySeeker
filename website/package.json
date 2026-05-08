@@ -10,7 +10,10 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "file-saver": "^2.0.5",
+    "jszip": "^3.10.1",
     "nuxt": "^4.4.4",
+    "three": "^0.184.0",
     "vue": "^3.5.33",
     "vue-router": "^5.0.6"
   },

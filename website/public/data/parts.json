@@ -1,0 +1,66 @@
+{
+  "video": [
+    {
+      "id": "analog",
+      "label": "Analog",
+      "zipFiles": [
+        "/models/video/analog_vtx.stl"
+      ]
+    },
+    {
+      "id": "walksnail",
+      "label": "Walksnail",
+      "zipFiles": [
+        "/models/video/walksnail_vtx.stl"
+      ]
+    },
+    {
+      "id": "dji_o4",
+      "label": "DJI O4",
+      "zipFiles": [
+        "/models/video/dji_o4.stl"
+      ]
+    }
+  ],
+
+  "stack": [
+    {
+      "id": "20x20",
+      "label": "20x20",
+      "zipFiles": [
+        "/models/stacks/stack_20x20.stl"
+      ]
+    },
+    {
+      "id": "30x30",
+      "label": "30x30",
+      "zipFiles": [
+        "/models/stacks/stack_30x30.stl"
+      ]
+    }
+  ],
+
+  "motor": [
+    {
+      "id": "2207",
+      "label": "2207",
+      "zipFiles": [
+        "/models/motors/motor_2207.stl"
+      ]
+    },
+    {
+      "id": "2807",
+      "label": "2807",
+      "zipFiles": [
+        "/models/motors/motor_2807.stl"
+      ]
+    },
+    {
+      "id": "3115",
+      "label": "3115",
+      "zipFiles": [
+        "/models/motors/motor_3115.stl"
+      ]
+    }
+  ]
+}
