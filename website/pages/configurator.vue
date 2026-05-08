@@ -13,7 +13,7 @@
     <div class="absolute top-[10%] left-[-200px] w-[600px] h-[600px] bg-white/10 blur-3xl rounded-full" />
     <div class="absolute bottom-[-250px] right-[-250px] w-[700px] h-[700px] bg-zinc-500/10 blur-3xl rounded-full" />
 
-    <!-- NAVBAR -->
+    <!-- NAV -->
     <header class="relative z-20 border-b border-white/10 backdrop-blur-2xl bg-black/20">
 
       <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
@@ -64,8 +64,10 @@
           <!-- CONFIG -->
           <div class="border border-white/10 bg-white/5 backdrop-blur-2xl rounded-[32px] p-8 space-y-8">
 
+            <!-- VIDEO -->
             <div>
               <label class="text-zinc-400 block mb-3">Video System</label>
+
               <select v-model="config.video" class="w-full bg-black/60 border border-white/10 p-4 rounded-2xl">
                 <option v-for="v in parts?.video || []" :key="v.id" :value="v.id">
                   {{ v.label }}
@@ -73,8 +75,10 @@
               </select>
             </div>
 
+            <!-- STACK -->
             <div>
               <label class="text-zinc-400 block mb-3">Stack</label>
+
               <select v-model="config.stack" class="w-full bg-black/60 border border-white/10 p-4 rounded-2xl">
                 <option v-for="s in parts?.stack || []" :key="s.id" :value="s.id">
                   {{ s.label }}
@@ -82,8 +86,10 @@
               </select>
             </div>
 
+            <!-- MOTOR -->
             <div>
               <label class="text-zinc-400 block mb-3">Motor</label>
+
               <select v-model="config.motor" class="w-full bg-black/60 border border-white/10 p-4 rounded-2xl">
                 <option v-for="m in parts?.motor || []" :key="m.id" :value="m.id">
                   {{ m.label }}
@@ -93,7 +99,7 @@
 
           </div>
 
-          <!-- COMPATIBILITY WARNINGS -->
+          <!-- WARNINGS -->
           <div v-if="warnings.length" class="border border-red-500/30 bg-red-500/10 rounded-2xl p-4">
             <p class="text-red-300 font-semibold mb-2">Warnings</p>
             <ul class="text-sm text-red-200 space-y-1">
@@ -101,7 +107,7 @@
             </ul>
           </div>
 
-          <!-- ONLY BUTTON -->
+          <!-- DOWNLOAD -->
           <button
             @click="downloadZip"
             class="bg-white text-black px-8 py-4 rounded-2xl font-semibold hover:scale-[1.03] transition"
@@ -158,15 +164,20 @@ const config = reactive({
   motor: ''
 })
 
-onMounted(async () => {
-  const res = await fetch('/data/parts.json')
-  parts.value = await res.json()
+/* ✅ UNIVERSAL DATA LOADING (LOCAL + GITHUB PAGES SAFE) */
+const { data } = await useFetch('/data/parts.json')
 
-  config.video = parts.value.video[0].id
-  config.stack = parts.value.stack[0].id
-  config.motor = parts.value.motor[0].id
+watchEffect(() => {
+  if (data.value) {
+    parts.value = data.value
+
+    if (!config.video) config.video = parts.value.video[0].id
+    if (!config.stack) config.stack = parts.value.stack[0].id
+    if (!config.motor) config.motor = parts.value.motor[0].id
+  }
 })
 
+/* COMPATIBILITY ENGINE */
 watch(config, () => {
 
   warnings.value = []
@@ -181,7 +192,10 @@ watch(config, () => {
 
 }, { deep: true })
 
+/* ZIP EXPORT */
 async function downloadZip() {
+
+  if (!parts.value) return
 
   const zip = new JSZip()
 
@@ -198,7 +212,6 @@ async function downloadZip() {
   motor.zipFiles.forEach(f => models.file(f.split('/').pop(), "STL"))
 
   const blob = await zip.generateAsync({ type: "blob" })
-
   saveAs(blob, `SkySeeker_${Date.now()}.zip`)
 }
 </script>
