@@ -1,13 +1,15 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
 
-  modules: ['@nuxtjs/tailwindcss'],
-
-  app: {
-    baseURL: '/SkySeeker/'
+  devtools: {
+    enabled: true
   },
 
-  nitro: {
-    preset: 'static'
+  modules: [
+    '@nuxtjs/tailwindcss'
+  ],
+
+  app: {
+    baseURL: '/skyseeker/'
   }
 })
