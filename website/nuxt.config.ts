@@ -10,6 +10,6 @@ export default defineNuxtConfig({
   ],
 
   app: {
-    baseURL: '/skyseeker/'
+    baseURL: '/SkySeeker/'
   }
 })
